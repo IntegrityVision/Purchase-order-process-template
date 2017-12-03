@@ -1,0 +1,66 @@
+#logging.level.org.springframework.web: DEBUG
+server:
+  port: 8080
+
+process:
+#positions in organization structure file
+  ou:
+    #low case job name
+    hrPosition: менеджер (управитель) з персоналу
+    omPosition: секретар
+    itPositions:
+      - cистемный адміністратор
+    pmPosition: фахівець з управління проектами та програмами
+    generalManagerPosition: генеральний директор
+    deputyGeneralManagerPosition: заступник генерального директора
+    accountantPositions:
+      - главный бухгалтер
+      - помощник бухгалтера
+      - бухгалтер
+      - головний бухгалтер
+    mainAccountantPosition: головний бухгалтер
+    supportPositions:
+      - руководитель отдела технической поддержки
+      - інженер технічної підтримки
+      - керівник відділу технічної підтримки
+    itDepHeadPosition: директор департаменту програмних рішень
+
+spring:
+  profiles.active: development
+
+---
+spring:
+  profiles: demo
+camunda:
+  host: localhost:8080
+  mailTo:
+  msExcelPath: /data/TestUsers.xlsx
+  database:
+    url: jdbc:postgresql://integrity-camunda-db:5432/camunda
+    user: postgres
+    password: postgres
+---
+spring:
+  profiles: development
+#Mail setting for sending notification
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: login@gmail.com
+    password: password
+    protocol: smtp
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
+      ssl.trust: smtp.gmail.com
+camunda:
+  #For correct link in email
+  host: localhost:8080
+  #All message will be redirect to this email. Set empty for sending to orginal recipient
+  mailTo: allMail@yourdomain.com
+  # You can get example of this file from {project directory}/docker/data
+  msExcelPath:  /docker/data/TestUsers.xlsx
+  database:
+    url: jdbc:postgresql://127.0.0.1:5432/camunda
+    user: postgres
+    password: postgres

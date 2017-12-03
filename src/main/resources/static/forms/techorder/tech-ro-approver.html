@@ -1,0 +1,13 @@
+<div ng-include="'/forms/techorder/tech-ro-basic.html'"></div>
+<div class="row">
+    <div ng-if="techorder.techToOrder" class="form-group col-xs-12">
+        <label for="techToOrder">Опис техніки яку потрібно замовити</label>
+        <textarea readonly class="form-control" rows="5" id="techToOrder" style="resize:none;"
+                  ng-model="techorder.techToOrder"></textarea>
+    </div>
+    <div ng-if="techorder.techCost" class="form-group col-xs-12">
+        <label for="techCost">Загальна вартість</label>
+        <input readonly class="form-control" id="techCost" type="number" ng-model="techorder.techCost">
+    </div>
+</div>
+<div ng-include="'/forms/techorder/tech-ro-decline.html'"></div>

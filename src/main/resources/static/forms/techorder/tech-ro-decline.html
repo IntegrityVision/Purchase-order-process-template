@@ -1,0 +1,22 @@
+<div ng-if="decline" class="row">
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="declineStatus">Статус заявки</label>
+                    <input readonly id="declineStatus" class="form-control" value="Відмовлено">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="declineUser">Хто відмовив</label>
+                    <input readonly id="declineUser" class="form-control" ng-model="decline.declineUser.name">
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-xs-6">
+            <label for="declineReason">Чому відмовив</label>
+            <textarea readonly id="declineReason" class="form-control" rows="5"
+                      ng-model="decline.declineReason" style="resize:none;">
+            </textarea>
+        </div>
+</div>

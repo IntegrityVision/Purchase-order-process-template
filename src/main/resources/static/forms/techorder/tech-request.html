@@ -1,0 +1,27 @@
+<form name="techRequest">
+    <script cam-script type="text/form-script">
+        $scope.techorder = {};
+
+        camForm.on('form-loaded', function () {
+            camForm.variableManager.createVariable({
+                name: 'techorder',
+                type: 'Object',
+                value: $scope.techorder,
+                valueInfo: {
+                    serializationDataFormat: 'application/json',
+                    objectTypeName: 'ua.com.integrity.model.techorder.TechOrder'
+                }
+            });
+        });
+        camForm.on('submit-success', function () {
+            location.reload();
+        });
+    </script>
+    <div class="row">
+        <div class="col-xs-12 form-group">
+            <label for="request" class="app-required-with-star">Замовлення техніки</label>
+            <textarea class="form-control" rows="5" id="request" style="resize:none;" ng-model="techorder.request"
+                      required></textarea>
+        </div>
+    </div>
+</form>

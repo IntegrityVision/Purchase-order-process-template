@@ -1,0 +1,29 @@
+
+spring:
+#mail setting
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: login@gmail.com
+    password: password
+    protocol: smtp
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
+      ssl.trust: smtp.gmail.com
+      
+---
+spring:
+  profiles: demo
+camunda:
+  host: camunda.integrity.com.ua:80
+  mailTo: allMail@yourdomain.com
+
+process:
+  ou:
+    #low case job name
+    deputyGeneralManager: заступник генерального директора
+    itPositions: cистемный адміністратор
+    accountantPositions: главный бухгалтер,помощник бухгалтера,бухгалтер,головний бухгалтер
+    mainAccountantPosition: головний бухгалтер
+    supportPositions: руководитель отдела технической поддержки,інженер технічної підтримки,керівник відділу технічної підтримки    

@@ -1,0 +1,41 @@
+<form name="techApprove">
+    <script cam-script type="text/form-script">
+        $scope.techorder = {};
+        $scope.approve = 'yes';
+        camForm.on('variables-restored', function () {
+            $scope.approve = camForm.variableManager.variable('approve').value;
+            $scope.techorder = camForm.variableManager.variable('techorder').value;
+            if ($scope.techorder.declineUser != null) {
+                delete $scope.techorder['declineUser'];
+                delete $scope.techorder['declineReason'];
+            }
+        });
+        camForm.on('form-loaded', function () {
+            camForm.variableManager.fetchVariable('techorder');
+        });
+
+        camForm.on('submit', function () {
+            if($scope.approve=='yes'){
+                delete $scope.techorder['declineReason'];
+            }
+        });
+    </script>
+    <div ng-include="'/forms/techorder/tech-ro-approver.html'"></div>
+    <div class="row">
+        <div class="form-group col-xs-12">
+            <label for="approve" class="app-required-with-star">Підтвердити?</label>
+            <select required id="approve" class="form-control" cam-variable-name="approve" cam-variable-type="String">
+                <option value="yes">Так</option>
+                <option value="no">Ні</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-12">
+            <p ng-if="approve == 'no'">
+                <label for="declineReason" class="app-required-with-star">Вкажіть причину відмови</label>
+                <textarea required id="declineReason" class="form-control" ng-model="techorder.declineReason"></textarea>
+            </p>
+        </div>
+    </div>
+</form>

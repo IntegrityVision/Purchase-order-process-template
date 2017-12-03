@@ -1,0 +1,30 @@
+version: '2'
+
+services: 
+
+    database-services:
+        container_name: integrity-camunda-db
+        image: postgres
+        environment: 
+          - POSTGRES_PASSWORD=postgres  
+          - POSTGRES_DB=camunda
+
+    camunda:
+        container_name: integrity-camunda
+        image: intvis/jboss-int
+        ports:  
+          - "80:8080"
+        volumes:
+          - ./app:/app
+          - ./data:/data
+          - ./config:/config
+        links:
+          - database-services:integrity-camunda-db
+        depends_on: 
+          - database-services
+        entrypoint:
+          - java
+          - -jar
+          - /app/iv-camunda-demo.jar
+          - "--spring.config.location=/config/"
+          - "--spring.profiles.active=demo"

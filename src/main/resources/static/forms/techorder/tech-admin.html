@@ -1,0 +1,45 @@
+<form name="techAdmin">
+    <script cam-script type="text/form-script">
+        $scope.techorder = {};
+        camForm.on('variables-restored', function () {
+            $scope.techorder = camForm.variableManager.variable('techorder').value;
+            if ($scope.techorder.declineUser != null || $scope.techorder.declineReason != null) {
+                $scope.decline = {
+                    declineUser: $scope.techorder.declineUser,
+                    declineReason: $scope.techorder.declineReason
+                };
+                delete $scope.techorder['declineUser'];
+                delete $scope.techorder['declineReason'];
+            }
+        });
+        camForm.on('form-loaded', function () {
+            camForm.variableManager.fetchVariable('techorder');
+        });
+        camForm.on('submit', function () {
+            if ($scope.techorder.warehouse) {
+                delete $scope.techorder['techToOrder'];
+                delete $scope.techorder['techCost'];
+            }
+        });
+    </script>
+    <div ng-include="'/forms/techorder/tech-ro-admin.html'"></div>
+    <div class="row">
+        <div class="form-group col-xs-12">
+            <label for="inWarehouse" class="app-required-with-star">Наявність техніки на складі</label>
+            <select required id="inWarehouse" class="form-control" ng-model="techorder.warehouse"
+                    ng-options="(item?'Так':'Ні') for item in [true, false]">
+            </select>
+        </div>
+    </div>
+    <div ng-if="techorder.warehouse == false" class="row">
+        <div class="form-group col-xs-12">
+            <label for="techToOrder" class="app-required-with-star">Опис техніки яку потрібно замовити</label>
+            <textarea required class="form-control" rows="5" id="techToOrder" style="resize:none;"
+                      ng-model="techorder.techToOrder"></textarea>
+        </div>
+        <div class="form-group col-xs-12">
+            <label for="techCost" class="app-required-with-star">Загальна вартість</label>
+            <input required class="form-control" id="techCost" type="number" ng-model="techorder.techCost" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/">
+        </div>
+    </div>
+</form>

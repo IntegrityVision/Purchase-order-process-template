@@ -1,0 +1,131 @@
+.navbar-brand {
+    text-indent: -999em;
+    background-image: url(/app/images/logo_integrity.png);
+    width: 70px;
+    background-size: 80px;
+}
+
+[cam-widget-header] {
+    border-bottom-color: #f14a0e;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #f14a0e;
+    border-color: #f14a0e;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #f14a0e;
+    border-color: #f14a0e;
+}
+
+span.glyphicon.glyphicon-list-alt {
+    color: #f14a0e !important;
+}
+
+span.glyphicon.glyphicon-user {
+    color: #f14a0e !important;
+}
+
+span.glyphicon.glyphicon-home {
+    color: #f14a0e !important;
+}
+
+/* менять цвет не валидных form-елементов сразу при открытии формы, даже если они не тронуты */
+form input.ng-invalid, form select.ng-invalid, form textarea.ng-invalid {
+    background-color: #F6ECEC;
+}
+
+/* добавления звездочки(*) к label обязательных полей  */
+.app-required-with-star::after {
+    content: " *";
+    color: red;
+}
+
+/* hide search process */
+div.form-group.has-feedback.ng-scope {
+    display: none !important;
+}
+
+/* hide priority */
+div.priority.ng-scope.ng-binding {
+    display: none !important;
+}
+
+/* hide task search */
+div.form-container.search-container {
+    display: none !important;
+}
+
+/* hide assign button */
+a.reset-assignee.glyphicon.glyphicon-remove.ng-scope {
+    display: none !important;
+}
+
+/* hide create task */
+li.ng-scope.create-task-action {
+    display: none !important;
+}
+
+/* hide hotkeys */
+li.ng-scope.shortcut-help {
+    display: none !important;
+}
+
+/* hide logout button */
+/*ul.dropdown-menu.dropdown-menu-right > li.divider, ul.dropdown-menu.dropdown-menu-right > li.logout {*/
+/*display: none !important;*/
+/*}*/
+
+/* hide date */
+span.followup-date.ng-isolate-scope {
+    display: none !important;
+}
+
+/* hide date */
+span.due-date.ng-isolate-scope {
+    display: none !important;
+}
+
+li.groups > span {
+    display: none !important;
+}
+
+span.glyphicon.glyphicon-plus-sign.ng-scope {
+    display: none !important;
+}
+
+a.createCommentLink {
+    display: none !important;
+}
+
+span.glyphicon.glyphicon-pencil {
+    display: none !important;
+}
+
+a.createCommentLink {
+    display: none !important;
+}
+
+span.glyphicon.glyphicon-pencil {
+    display: none !important;
+}
+
+.column.tasks-list .content view {
+    display: none !important;
+}
+
+/*   hide notification.message in error*/
+.alert strong.ng-scope {
+    visibility: hidden;
+}
+
+.alert span.message {
+    display: none;
+}
+
+/* end hide notification.message in error*/
+
+

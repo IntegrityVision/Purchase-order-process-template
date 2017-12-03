@@ -1,0 +1,16 @@
+<div ng-include="'/forms/techorder/tech-ro-header.html'"></div>
+<div class="row">
+    <div class="col-xs-12 form-group">
+        <label for="request">Заявка</label>
+        <textarea readonly class="form-control" rows="5" id="request" style="resize:none;"
+                  ng-model="techorder.request"></textarea>
+    </div>
+</div>
+<div ng-if="techorder.comment" class="row">
+    <div class="form-group col-xs-12">
+        <label for="comment">Коментар керівника департаменту</label>
+            <textarea readonly id="comment" class="form-control" rows="5"
+                      ng-model="techorder.comment" style="resize:none;">
+            </textarea>
+    </div>
+</div>

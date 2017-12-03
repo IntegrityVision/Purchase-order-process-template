@@ -1,0 +1,37 @@
+<form name="techRequestModify">
+    <script cam-script type="text/form-script">
+        $scope.techorder = {};
+
+        camForm.on('variables-restored', function () {
+            $scope.techorder = camForm.variableManager.variable('techorder').value;
+            if ($scope.techorder.declineUser != null) {
+                $scope.decline = {declineUser: $scope.techorder.declineUser,
+                    declineReason: $scope.techorder.declineReason};
+                delete $scope.techorder['declineUser'];
+                delete $scope.techorder['declineReason'];
+            }
+        });
+        camForm.on('form-loaded', function () {
+            camForm.variableManager.fetchVariable('techorder');
+        });
+    </script>
+    <div ng-include="'/forms/techorder/tech-ro-header.html'"></div>
+    <div ng-include="'/forms/techorder/tech-ro-decline.html'"></div>
+    <div class="row">
+        <div class="form-group col-xs-12">
+            <label for="userAction" class="app-required-with-star">Що робити із заявкою?</label>
+            <select id="userAction" class="form-control" required cam-variable-name="retryApplication"
+                    cam-variable-type="Boolean">
+                <option value="true">Редагувати та відправити повторно</option>
+                <option value="false">Закрити</option>
+            </select>
+        </div>
+    </div>
+    <div ng-if="retryApplication" class="row">
+        <div class="col-xs-12 form-group">
+            <label for="request" class="app-required-with-star">Заявка</label>
+            <textarea class="form-control" rows="5" id="request" style="resize:none;" ng-model="techorder.request"
+                      required></textarea>
+        </div>
+    </div>
+</form>
