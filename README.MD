@@ -1,4 +1,6 @@
-# Purchase order process template
+# PURCHASE ORDER PROCESS TEMPLATE
+
+![Purchase order process template](documentation/concept.png)
 
 Welcome to purchase order process template by [Integrity Vision](https://www.integrity.com.ua/).
 
@@ -21,7 +23,7 @@ Table of contents:
 This project was started with the automation of the Equipment purchase order process using [BPM Camunda](https://camunda.org/).
 Camunda is an open source platform for workflow and business process management.
 
-![bpm schema](documentation/techorder.jpeg?raw=true)
+![bpm schema](documentation/bpmn_scheme.jpeg?raw=true)
 
 Project contains additional `docker-compose.yml` for running with docker-compose (located in the folder `docker`).
 
@@ -114,11 +116,13 @@ If you have any questions, issues or proposals, please create a new issue in thi
 
 We’re going to publish more usefully processes to make your work even easier.
 
-Stay tuned! Connect with us on [Facebook](https://www.facebook.com/integrity.vision/), [Linkedin](https://www.linkedin.com/company/integrity-vision/) and [YouTube](https://www.youtube.com/user/integrityvision).
-
+Stay tuned! Connect us:
+ 
+[![Facebook](https://www.integrity.com.ua/wp-content/uploads/2017/12/FB_1_50.png)](https://www.facebook.com/integrity.vision/)  [![Linkedin](https://www.integrity.com.ua/wp-content/uploads/2017/12/Linkedin_1_50.png)](https://www.linkedin.com/company/integrity-vision/)  [![YouTube](https://www.integrity.com.ua/wp-content/uploads/2017/12/YouTube_circle_50.png)](https://www.youtube.com/user/integrityvision)
+ 
 ## Authors
 
-[Integrity Vision](https://www.integrity.com.ua/)
+[![Integrity Vision](https://www.integrity.com.ua/wp-content/uploads/2017/12/Integrity-vision-logo-png_small.png)](https://www.integrity.com.ua/)
 
 ## License
 
