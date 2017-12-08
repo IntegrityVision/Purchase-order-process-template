@@ -122,7 +122,7 @@ Stay tuned! Connect us:
  
 ## Authors
 
-[![Integrity Vision](https://www.integrity.com.ua/wp-content/uploads/2017/12/Integrity-vision-logo-png_small.png)](https://www.integrity.com.ua/)
+[![Integrity Vision](https://www.integrity.com.ua/wp-content/uploads/2017/12/Integrity-vision-logo-png_small.png)](http://bit.ly/ivgithub)
 
 ## License
 
