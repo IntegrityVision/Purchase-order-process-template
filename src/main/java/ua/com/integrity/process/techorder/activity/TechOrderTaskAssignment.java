@@ -31,8 +31,11 @@ public class TechOrderTaskAssignment {
 
     public String getDepManager(TechOrder techOrder) {
         String manager = "";
-        if (techOrder.getOwner().getDepartmentManager() != null) {
-            manager = orgStructureHelper.getUserByName(techOrder.getOwner().getDepartmentManager()).getEmail();
+        if ((techOrder.getOwner() != null) && (techOrder.getOwner().getDepartmentManager() != null)) {
+            User userManager = orgStructureHelper.getUserByName(techOrder.getOwner().getDepartmentManager());
+            if (userManager != null) {
+                manager = userManager.getEmail();
+            }
         }
         return manager;
     }

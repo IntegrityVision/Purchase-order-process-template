@@ -63,7 +63,7 @@ camunda:
 
 For running with docker-compose you have to set up demo profile in `docker/config/application.yml` (this file is reduced because it has pre-setup setting).
 
-Camunda users will be created from `{msExcelPath}` file (in docker configuration it's `docker/data/TestUsers.xlsx`). User passwords are also in this file.
+Camunda users will be created from `{msExcelPath}` file (in docker configuration it's `docker/data/TestUsers.xlsx`). User passwords are also in this file. Don't use created manually camunda users(because they are out of organisation structure).
 
 ## Running
 
